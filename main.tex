@@ -1,0 +1,88 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Guida Introduttiva a Git},
+}
+
+\title{\textbf{GUIDA INTRODUTTIVA A GIT}}
+\author{\textbf{Stefano Peris} \\ 
+\small Email: \href{mailto:stefanoperis.github@gmail.com}{stefanoperis.github@gmail.com} \\
+\small GitHub: \href{https://github.com/TechnoKnight77}{github.com/TechnoKnight77}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+Questa guida rapida raccoglie i comandi essenziali per l'utilizzo di Git, organizzati per logica di utilizzo e pronti per essere consultati durante le sessioni di sviluppo.
+
+\section{Configurazione Iniziale}
+Prima di iniziare a tracciare i file, è fondamentale configurare l'identità dell'utente globale per associare correttamente i commit.
+
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Comando} & \textbf{Descrizione} \\
+\midrule
+\texttt{git config --global user.name "Stefano Peris"} & Imposta il nome utente globale. \\
+\texttt{git config --global user.email "stefanoperis.github@gmail.com"} & Imposta l'email globale. \\
+\texttt{git config --list} & Mostra tutte le configurazioni attive. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Comandi Principali del Workflow}
+Il ciclo di vita base del codice all'interno di un repository Git locale e remoto.
+
+\begin{center}
+\small
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Comando} & \textbf{Descrizione} \\
+\midrule
+\texttt{git init} & Inizializza un nuovo repository Git locale nella cartella corrente. \\
+\texttt{git clone <url>} & Clona un repository remoto esistente sul proprio computer. \\
+\texttt{git status} & Mostra lo stato dei file (modificati, tracciati, in staging). \\
+\texttt{git add <file>} & Aggiunge uno specifico file all'area di staging. \\
+\texttt{git add .} & Aggiunge tutti i file modificati e nuovi all'area di staging. \\
+\texttt{git commit -m "messaggio"} & Registra le modifiche presenti nello staging creandone uno snapshot. \\
+\texttt{git push origin <branch>} & Invia i commit locali al repository remoto sul branch specificato. \\
+\texttt{git pull} & Recupera le ultime modifiche dal repository remoto e le unisce nel codice locale. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Gestione dei Branch (Rami)}
+Lavorare in parallelo isolando le funzionalità o i fix di bug.
+
+\begin{center}
+\small
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Comando} & \textbf{Descrizione} \\
+\midrule
+\texttt{git branch} & Elenca tutti i branch locali esistenti. \\
+\texttt{git branch <nome-branch>} & Crea un nuovo branch con il nome specificato. \\
+\texttt{git checkout <nome-branch>} & Passa al branch specificato lavorando sul suo storico. \\
+\texttt{git checkout -b <nome-branch>} & Scorciatoia per creare un nuovo branch e passarvi immediatamente. \\
+\texttt{git merge <nome-branch>} & Unisce la cronologia del branch specificato dentro quello attuale. \\
+\texttt{git branch -d <nome-branch>} & Elimina in sicurezza il branch specificato (solo se già unito). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
